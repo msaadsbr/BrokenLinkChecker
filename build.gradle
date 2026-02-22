@@ -1,10 +1,9 @@
 plugins {
     id 'java'
-    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
 group = 'dev.msaad.burp'
-version = '1.0.0'
+version = '2.0.0'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
@@ -19,13 +18,11 @@ dependencies {
     compileOnly 'net.portswigger.burp.extensions:montoya-api:2025.4'
 }
 
-shadowJar {
+jar {
     archiveBaseName.set('BrokenLinkHijacker')
     archiveClassifier.set('')
     archiveVersion.set('')
-}
 
-jar {
     manifest {
         attributes(
             'Implementation-Title': 'Broken Link Hijacker',
