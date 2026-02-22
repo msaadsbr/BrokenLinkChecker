@@ -68,4 +68,4 @@ src/main/java/dev/msaad/burp/
 
 ---
 
-**Developed by [Muhammad Saad Sabir](https://linkedin.com/in/msaadsbr)** — _Cybersecurity Researcher | Data Science Student at PUCIT_
+**Developed by [msaadsbr](https://linkedin.com/in/msaadsbr)**
