@@ -156,22 +156,21 @@ public final class PlatformDetector {
         if (code == 404)
             return true;
         return containsAny(body,
+                "this account doesn\u2019t exist",
                 "this account doesn't exist",
-                "user not found",
                 "account is suspended",
-                "\"screen_name\":null",
-                "doesn't exist");
+                "\"screen_name\":null");
     }
 
     private static boolean isBrokenInstagram(int code, String body) {
         if (code == 404)
             return true;
-        // Instagram often returns 200 with a soft-404 page
+        // Instagram returns 200 with a soft-404 page.
+        // NOTE: Do NOT check for "httpErrorPage" - it is a CSS class on ALL IG pages.
         return containsAny(body,
                 "sorry, this page isn't available",
-                "the link you followed may be broken",
-                "httperrorpage",
-                "\"is_private\":false,\"edge_owner_to_timeline_media\":{\"count\":0");
+                "sorry, this page isn\u2019t available",
+                "the link you followed may be broken");
     }
 
     private static boolean isBrokenYouTube(int code, String body) {
@@ -218,12 +217,13 @@ public final class PlatformDetector {
     private static boolean isBrokenTikTok(int code, String body) {
         if (code == 404)
             return true;
-        // TikTok sometimes returns 200 with "Couldn't find this account"
+        // TikTok returns 200 with specific text for broken profiles.
+        // NOTE: Do NOT check for "account not found" - appears in JS on valid pages.
         return containsAny(body,
                 "couldn't find this account",
-                "account not found",
+                "couldn\u2019t find this account",
                 "user_not_found",
-                "\"statuscode\":10202");
+                "\"statusCode\":10202");
     }
 
     // ===================== Helpers =====================
