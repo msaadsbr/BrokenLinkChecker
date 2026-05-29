@@ -68,4 +68,4 @@ src/main/java/dev/msaad/burp/
 
 ---
 
-**Developed by [msaadsbr](https://linkedin.com/in/msaadsbr)**
+**Developed by [msaadsbr](https://linkedin.com/in/msaadsbr)(me)**
